@@ -1,0 +1,14 @@
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\bin\Debug\RinorsStatistics.exe.config
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\bin\Debug\RinorsStatistics.exe
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\bin\Debug\RinorsStatistics.pdb
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\RinorsStatistics.csprojAssemblyReference.cache
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\MainWindow.g.cs
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\App.g.cs
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\RinorsStatistics_MarkupCompile.cache
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\RinorsStatistics_MarkupCompile.lref
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\MainWindow.baml
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\RinorsStatistics.g.resources
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\RinorsStatistics.Properties.Resources.resources
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\RinorsStatistics.csproj.GenerateResource.cache
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\RinorsStatistics.exe
+C:\Users\Ole\Desktop\Github\RinorsStatistics\RinorsStatistics\obj\Debug\RinorsStatistics.pdb
