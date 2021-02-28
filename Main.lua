@@ -1,4 +1,4 @@
---Vars
+-----Vars-----
 local OKColor = "#00B000"
 local OK_R = .55
 local OK_G = .69
@@ -14,13 +14,40 @@ local Var1_R = .35
 local Var1_G = .55
 local Var1_B = .80
 
----for skinning--
-local prevtarget = nil
 
------------------
---
 
-------
+-----Vars-----
+
+-----Functions-----
+function ResetCordPixels()
+	for i=0, 100, 1 do
+		_G["XCordTexture"..i]:SetVertexColor(Not_OK_R,Not_OK_G,Not_OK_B)
+		_G["XDesiCordTexture"..i]:SetVertexColor(Not_OK_R,Not_OK_G,Not_OK_B)
+		_G["YCordTexture"..i]:SetVertexColor(Not_OK_R,Not_OK_G,Not_OK_B)
+		_G["YDesiCordTexture"..i]:SetVertexColor(Not_OK_R,Not_OK_G,Not_OK_B)
+		_G["facingTexture"..i]:SetVertexColor(Not_OK_R,Not_OK_G,Not_OK_B)
+	end
+end
+
+function UpdateCordPixels(cordX, cordXDesi, cordY, cordYDesi, face)
+	cordX = cordX:match("0*(%d+)")
+	cordXDesi = cordXDesi:match("0*(%d+)")
+	cordY = cordY:match("0*(%d+)")
+	cordYDesi = cordYDesi:match("0*(%d+)")
+	face = face:match("0*(%d+)")
+	--print(cordX)
+	--print(cordXDesi)
+	--print(cordY)
+	--print(cordYDesi)
+	_G["XCordTexture"..cordX]:SetVertexColor(OK_R,OK_G,OK_B)
+	_G["XDesiCordTexture"..cordXDesi]:SetVertexColor(OK_R,OK_G,OK_B)
+	_G["YCordTexture"..cordY]:SetVertexColor(OK_R,OK_G,OK_B)
+	_G["YDesiCordTexture"..cordYDesi]:SetVertexColor(OK_R,OK_G,OK_B)
+	_G["facingTexture"..face]:SetVertexColor(OK_R,OK_G,OK_B)
+	
+end
+
+-----Functions-----
 
 local frame_Combat = CreateFrame("Frame",ShowUF,UIParent)
 local CombatTexture = frame_Combat:CreateTexture()
@@ -53,45 +80,100 @@ frame_Range:SetSize(256,64)
 frame_Range:Show()
 
 -------------//MovementCordPixels//----------
-local frame_XCord = CreateFrame("Frame",ShowUF,UIParent)
-local XCordTexture = frame_XCord:CreateTexture()
-XCordTexture:SetPoint("TOPLEFT", relativeframe,0,1)
-XCordTexture:SetSize(10,10)
-XCordTexture:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
-frame_XCord.texture = XCordTexture
-XCordTexture:SetVertexColor(0,0,0)
-frame_XCord:SetSize(256,64)
-frame_XCord:Show()
+for i=0, 100, 1 do
+    _G["frame_XCord"..i] = CreateFrame("Frame",ShowUF,UIParent)
+	_G["XCordTexture"..i] = _G["frame_XCord"..i]:CreateTexture()
+	_G["XCordTexture"..i]:SetPoint("TOPLEFT", relativeframe,i,-1)
+	_G["XCordTexture"..i]:SetSize(1,1)
+	_G["XCordTexture"..i]:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
+	_G["frame_XCord"..i].texture = _G["XCordTexture"..i]
+	_G["XCordTexture"..i]:SetVertexColor(0,0,0)
+	_G["frame_XCord"..i]:SetSize(1,1)
+	_G["frame_XCord"..i]:Show()	
+end
 
-local frame_XDesiCord = CreateFrame("Frame",ShowUF,UIParent)
-local XDesiCordTexture = frame_XDesiCord:CreateTexture()
-XDesiCordTexture:SetPoint("TOPLEFT", relativeframe,0,2)
-XDesiCordTexture:SetSize(1,1)
-XDesiCordTexture:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
-frame_XDesiCord.texture = XDesiCordTexture
-XDesiCordTexture:SetVertexColor(0,0,0)
-frame_XDesiCord:SetSize(256,64)
-frame_XDesiCord:Show()
+for i=0, 100, 1 do
+    _G["frame_XDesiCord"..i] = CreateFrame("Frame",ShowUF,UIParent)
+	_G["XDesiCordTexture"..i] = _G["frame_XDesiCord"..i]:CreateTexture()
+	_G["XDesiCordTexture"..i]:SetPoint("TOPLEFT", relativeframe,i,-2)
+	_G["XDesiCordTexture"..i]:SetSize(1,1)
+	_G["XDesiCordTexture"..i]:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
+	_G["frame_XDesiCord"..i].texture = _G["XDesiCordTexture"..i]
+	_G["XDesiCordTexture"..i]:SetVertexColor(0,0,0)
+	_G["frame_XDesiCord"..i]:SetSize(256,64)
+	_G["frame_XDesiCord"..i]:Show()	
+end
+---xCORDDeci---
+---yCORD---
+for i=0, 100, 1 do
+    _G["frame_YCord"..i] = CreateFrame("Frame",ShowUF,UIParent)
+	_G["YCordTexture"..i] = _G["frame_YCord"..i]:CreateTexture()
+	
+	_G["YCordTexture"..i]:SetPoint("TOPLEFT", relativeframe,i,-3)
+	_G["YCordTexture"..i]:SetSize(1,1)
+	_G["YCordTexture"..i]:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
+	_G["frame_YCord"..i].texture = _G["YCordTexture"..i]
+	_G["YCordTexture"..i]:SetVertexColor(0,0,0)
+	_G["frame_YCord"..i]:SetSize(1,1)
+	_G["frame_YCord"..i]:Show()	
+end
+---yCORD---
+---yCordDesi---
+for i=0, 100, 1 do
+    _G["frame_YDesiCord"..i] = CreateFrame("Frame",ShowUF,UIParent)
+	_G["YDesiCordTexture"..i] = _G["frame_YDesiCord"..i]:CreateTexture()
+	
+	_G["YDesiCordTexture"..i]:SetPoint("TOPLEFT", relativeframe,i,-4)
+	_G["YDesiCordTexture"..i]:SetSize(1,1)
+	_G["YDesiCordTexture"..i]:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
+	_G["frame_YDesiCord"..i].texture = _G["YDesiCordTexture"..i]
+	_G["YDesiCordTexture"..i]:SetVertexColor(0,0,0)
+	_G["frame_YDesiCord"..i]:SetSize(1,1)
+	_G["frame_YDesiCord"..i]:Show()	
+end
+---yCordDesi---
+---Facing---
+for i=0, 100, 1 do
+    _G["frame_facing"..i] = CreateFrame("Frame",ShowUF,UIParent)
+	_G["facingTexture"..i] = _G["frame_facing"..i]:CreateTexture()
+	
+	_G["facingTexture"..i]:SetPoint("TOPLEFT", relativeframe,i,-5)
+	_G["facingTexture"..i]:SetSize(1,1)
+	_G["facingTexture"..i]:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
+	_G["frame_facing"..i].texture = _G["facingTexture"..i]
+	_G["facingTexture"..i]:SetVertexColor(0,0,0)
+	_G["frame_facing"..i]:SetSize(1,1)
+	_G["frame_facing"..i]:Show()	
+end
+---facing---
 
-local frame_YCord = CreateFrame("Frame",ShowUF,UIParent)
-local YCordTexture = frame_YCord:CreateTexture()
-YCordTexture:SetPoint("TOPLEFT", relativeframe,0,1)
-YCordTexture:SetSize(1,1)
-YCordTexture:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
-frame_YCord.texture = YCordTexture
-YCordTexture:SetVertexColor(0,0,0)
-frame_YCord:SetSize(256,64)
-frame_YCord:Show()
+-------------//MovementCordPixels//----------
 
-local frame_YDesiCord = CreateFrame("Frame",ShowUF,UIParent)
-local YDesiCordTexture = frame_YDesiCord:CreateTexture()
-YDesiCordTexture:SetPoint("TOPLEFT", relativeframe,0,2)
-YDesiCordTexture:SetSize(1,1)
-YDesiCordTexture:SetTexture("Interface\\AddOns\\WoWUI\\Background\\NaTUI")
-frame_YDesiCord.texture = YDesiCordTexture
-YDesiCordTexture:SetVertexColor(0,0,0)
-frame_YDesiCord:SetSize(256,64)
-frame_YDesiCord:Show()
+local frameUpdate = CreateFrame('Frame')
+local timer = 0
+local facing = 0;
+
+frameUpdate:SetScript('OnUpdate', function(self, elapsed)
+    timer = timer + elapsed
+	if(timer > 1) then
+		local map = C_Map.GetBestMapForUnit("player")
+		local position = C_Map.GetPlayerMapPosition(map, "player")
+		local testString1, testString2 = position:GetXY()
+		local xCord = strsub(testString1,3,4)
+		local xCordDesi = strsub(testString1,5,6)
+		local yCord = strsub(testString2,3,4)
+		local yCordDesi = strsub(testString2,5,6)
+		
+		facing = GetPlayerFacing()/6.2832
+		local newface = strsub(facing,3,4)
+		print(newface)
+		
+		ResetCordPixels()
+		UpdateCordPixels(xCord,xCordDesi,yCord,yCordDesi,newface)		
+	
+		timer = 0
+	end
+end)
 
 
 -------------//MovementCordPixels//----------

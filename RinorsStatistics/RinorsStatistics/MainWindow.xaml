@@ -8,5 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Name="ButtonSearchPixel" Click="OnButtonStartProgram" Content="Start" HorizontalAlignment="Center" Margin="347,220,361,169" VerticalAlignment="Center" Width="84" Height="30"/>
+        <Button Name="BtnShowDia" Click="ShowDia" Content="Vis" HorizontalAlignment="Center" Margin="347,140,361,249" VerticalAlignment="Center" Width="84" Height="30"/>
     </Grid>
 </Window>
