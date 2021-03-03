@@ -9,5 +9,19 @@
     <Grid>
         <Button Name="ButtonSearchPixel" Click="OnButtonStartProgram" Content="Start" HorizontalAlignment="Center" Margin="347,220,361,169" VerticalAlignment="Center" Width="84" Height="30"/>
         <Button Name="BtnShowDia" Click="ShowDia" Content="Vis" HorizontalAlignment="Center" Margin="347,140,361,249" VerticalAlignment="Center" Width="84" Height="30"/>
+        <Button Name="BtnCordRecord" Click="InitRecording" Content="Start Recording" HorizontalAlignment="Center" Margin="495,316,168,73" VerticalAlignment="Center" Width="129" Height="30"/>
+        <Button Name="BtnStopCordRecord" Click="StopRecording" Content="Stop Recording" HorizontalAlignment="Center" Margin="495,363,168,26" VerticalAlignment="Center" Width="129" Height="30"/>
+        <TextBox Name="TextFileName" HorizontalAlignment="Center" Margin="260,316,332,73" TextWrapping="Wrap" Text="Filename8.txt" VerticalAlignment="Center" Width="200" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox Name="DebugText" HorizontalAlignment="Center" Margin="105,200,621,189" TextWrapping="Wrap" Text="Debug" VerticalAlignment="Center" Width="66" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox Name="DebugCurrXcord" HorizontalAlignment="Center" Margin="74,255,666,134" TextWrapping="Wrap" Text="curX" VerticalAlignment="Center" Width="52" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox Name="DebugCurrYcord" HorizontalAlignment="Center" Margin="149,255,591,134" TextWrapping="Wrap" Text="curY" VerticalAlignment="Center" Width="52" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox Name="DebugTarXcord" HorizontalAlignment="Center" Margin="74,296,666,93" TextWrapping="Wrap" Text="tarX" VerticalAlignment="Center" Width="52" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox Name="DebugTarYcord" HorizontalAlignment="Center" Margin="149,296,591,93" TextWrapping="Wrap" Text="tarY" VerticalAlignment="Center" Width="52" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+        <TextBox Name="DebugCurTurn" HorizontalAlignment="Center" Margin="21,349,719,40" TextWrapping="Wrap" Text="curTurn" VerticalAlignment="Center" Width="52" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox Name="DebugWantTurn" HorizontalAlignment="Center" Margin="92,349,634,40" TextWrapping="Wrap" Text="WantTurn" VerticalAlignment="Center" Width="66" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <TextBox Name="DebugTurnValue" HorizontalAlignment="Center" Margin="178,349,550,40" TextWrapping="Wrap" Text="TurnValue" VerticalAlignment="Center" Width="64" Height="30" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
     </Grid>
 </Window>
